@@ -1,0 +1,135 @@
+/* Efek animasi fade-in untuk setiap card */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s forwards;
+}
+.fade-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.fade-in:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.fade-in:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.fade-in:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.fade-in:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.fade-in:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.fade-in:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.fade-in:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.penulis {
+  color: #1976d2;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+.foto-prestasi {
+  display: flex;
+  gap: 18px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.foto-prestasi img {
+  width: 120px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.13);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.foto-prestasi img:hover {
+  transform: scale(1.12) rotate(-2deg);
+  box-shadow: 0 4px 16px #e5393533;
+}
+
+.logo-sejarah {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+.logo-sejarah-img {
+  width: 180px;
+  max-width: 90vw;
+  border-radius: 16px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.13);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.logo-sejarah-img:hover {
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 4px 16px #1976d233;
+}
+.logo-sejarah-text {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+.welcome.card h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.35em;
+}
+.welcome.card h2::before {
+  content: attr(data-icon);
+  font-size: 1.2em;
+  margin-right: 6px;
+  color: #e53935;
+  display: inline-block;
+}
+
+ol,
+ul {
+  padding-left: 22px;
+}
+
+/* Efek glow merah & scale hover untuk semua card utama di halaman sejarah */
+.welcome.card,
+.welcome.card.fade-in {
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.welcome.card:hover,
+.welcome.card.fade-in:hover {
+  box-shadow: 0 0 24px 0 #e5393588, 0 8px 24px #e5393533;
+  transform: translateY(-4px) scale(1.01); /* scale sama seperti di beranda */
+}
+
+@media (max-width: 700px) {
+  .foto-prestasi {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-sejarah-img {
+    width: 120px;
+    max-width: 80vw;
+  }
+  .welcome.card h2 {
+    font-size: 1.1em;
+  }
+}
